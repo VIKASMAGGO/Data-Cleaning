@@ -13,23 +13,44 @@ The tidy data was generated in the following way:
 6) Subject and activity data were converted to columns, which were also labeled.
 
 7) Data were tidied by melting by subject and activity, then dcasting (using the reshape2 package) on both subject and activity with respect to the melted variable. These data were aggregated for each unique subject and activity pair using the mean function.
-
-Factors
-
-subject: Subject ID number
-activity: Activity being performed during data collection
-Activities
-
-WALKING: subject was walking
-WALKING_UPSTAIRS: subject was walking up a staircase
-`WALKING_DOWNSTAIRS: subject was walking down a staircase
-SITTING: subject was sitting
-STANDING: subject was standing
-LAYING): subject was laying down
-Parameters measured
-
-Only Mean and Std values were retained from the input data. These values were aggregated by finding the averaging measurements for each unique pair of subjects and activities. The leading "t" indicates time domain data. The leading "f" indicates frequency domain data.
-
-tBodyAccMeanX, tBodyAccMeanY, tBodyAccMeanZ, tBodyAccStdX, tBodyAccStdY, tBodyAccStdZ, tGravityAccMeanX, tGravityAccMeanY, tGravityAccMeanZ, tGravityAccStdX, tGravityAccStdY, tGravityAccStdZ, tBodyAccJerkMeanX, tBodyAccJerkMeanY, tBodyAccJerkMeanZ, tBodyAccJerkStdX, tBodyAccJerkStdY, tBodyAccJerkStdZ, tBodyGyroMeanX, tBodyGyroMeanY, tBodyGyroMeanZ, tBodyGyroStdX, tBodyGyroStdY, tBodyGyroStdZ, tBodyGyroJerkMeanX, tBodyGyroJerkMeanY, tBodyGyroJerkMeanZ, tBodyGyroJerkStdX, tBodyGyroJerkStdY, tBodyGyroJerkStdZ, tBodyAccMagMean, tBodyAccMagStd, tGravityAccMagMean, tGravityAccMagStd, tBodyAccJerkMagMean, tBodyAccJerkMagStd, tBodyGyroMagMean, tBodyGyroMagStd, tBodyGyroJerkMagMean, tBodyGyroJerkMagStd, fBodyAccMeanX, fBodyAccMeanY, fBodyAccMeanZ, fBodyAccStdX, fBodyAccStdY, fBodyAccStdZ, fBodyAccMeanFreqX, fBodyAccMeanFreqY, fBodyAccMeanFreqZ, fBodyAccJerkMeanX, fBodyAccJerkMeanY, fBodyAccJerkMeanZ, fBodyAccJerkStdX, fBodyAccJerkStdY, fBodyAccJerkStdZ, fBodyAccJerkMeanFreqX, fBodyAccJerkMeanFreqY, fBodyAccJerkMeanFreqZ, fBodyGyroMeanX, fBodyGyroMeanY, fBodyGyroMeanZ, fBodyGyroStdX, fBodyGyroStdY, fBodyGyroStdZ, fBodyGyroMeanFreqX, fBodyGyroMeanFreqY, fBodyGyroMeanFreqZ, fBodyAccMagMean, fBodyAccMagStd, fBodyAccMagMeanFreq, fBodyBodyAccJerkMagMean, fBodyBodyAccJerkMagStd, fBodyBodyAccJerkMagMeanFreq, fBodyBodyGyroMagMean, fBodyBodyGyroMagStd, fBodyBodyGyroMagMeanFreq, fBodyBodyGyroJerkMagMean, fBodyBodyGyroJerkMagStd, fBodyBodyGyroJerkMagMeanFreq
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
+ [1] "activityId"                   "subjectId"                   
+ [3] "tBodyAccMean-X"               "tBodyAccMean-Y"              
+ [5] "tBodyAccMean-Z"               "tBodyAcc-std-X"              
+ [7] "tBodyAcc-std-Y"               "tBodyAcc-std-Z"              
+ [9] "tGravityAccMean-X"            "tGravityAccMean-Y"           
+[11] "tGravityAccMean-Z"            "tGravityAcc-std-X"           
+[13] "tGravityAcc-std-Y"            "tGravityAcc-std-Z"           
+[15] "tBodyAccJerkMean-X"           "tBodyAccJerkMean-Y"          
+[17] "tBodyAccJerkMean-Z"           "tBodyAccJerk-std-X"          
+[19] "tBodyAccJerk-std-Y"           "tBodyAccJerk-std-Z"          
+[21] "tBodyGyroMean-X"              "tBodyGyroMean-Y"             
+[23] "tBodyGyroMean-Z"              "tBodyGyro-std-X"             
+[25] "tBodyGyro-std-Y"              "tBodyGyro-std-Z"             
+[27] "tBodyGyroJerkMean-X"          "tBodyGyroJerkMean-Y"         
+[29] "tBodyGyroJerkMean-Z"          "tBodyGyroJerk-std-X"         
+[31] "tBodyGyroJerk-std-Y"          "tBodyGyroJerk-std-Z"         
+[33] "tBodyAccMagMean"              "tBodyAccMagStdDev"           
+[35] "tGravityAccMagMean"           "tGravityAccMagStdDev"        
+[37] "tBodyAccJerkMagMean"          "tBodyAccJerkMagStdDev"       
+[39] "tBodyGyroMagMean"             "tBodyGyroMagStdDev"          
+[41] "tBodyGyroJerkMagMean"         "tBodyGyroJerkMagStdDev"      
+[43] "fBodyAccMean-X"               "fBodyAccMean-Y"              
+[45] "fBodyAccMean-Z"               "fBodyAcc-std-X"              
+[47] "fBodyAcc-std-Y"               "fBodyAcc-std-Z"              
+[49] "fBodyAccMeanFreq-X"           "fBodyAccMeanFreq-Y"          
+[51] "fBodyAccMeanFreq-Z"           "fBodyAccJerkMean-X"          
+[53] "fBodyAccJerkMean-Y"           "fBodyAccJerkMean-Z"          
+[55] "fBodyAccJerk-std-X"           "fBodyAccJerk-std-Y"          
+[57] "fBodyAccJerk-std-Z"           "fBodyAccJerkMeanFreq-X"      
+[59] "fBodyAccJerkMeanFreq-Y"       "fBodyAccJerkMeanFreq-Z"      
+[61] "fBodyGyroMean-X"              "fBodyGyroMean-Y"             
+[63] "fBodyGyroMean-Z"              "fBodyGyro-std-X"             
+[65] "fBodyGyro-std-Y"              "fBodyGyro-std-Z"             
+[67] "fBodyGyroMeanFreq-X"          "fBodyGyroMeanFreq-Y"         
+[69] "fBodyGyroMeanFreq-Z"          "fBodyAccMagMean"             
+[71] "fBodyAccMagStdDev"            "fBodyAccMagMeanFreq"         
+[73] "fBodyBodyAccJerkMagMean"      "fBodyBodyAccJerkMagStdDev"   
+[75] "fBodyBodyAccJerkMagMeanFreq"  "fBodyBodyGyroMagMean"        
+[77] "fBodyBodyGyroMagStdDev"       "fBodyBodyGyroMagMeanFreq"    
+[79] "fBodyBodyGyroJerkMagMean"     "fBodyBodyGyroJerkMagStdDev"  
+[81] "fBodyBodyGyroJerkMagMeanFreq" "activityType"    
