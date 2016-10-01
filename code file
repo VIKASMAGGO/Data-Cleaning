@@ -1,0 +1,35 @@
+The tidy data was generated in the following way:
+
+1) Input data were downloaded.
+
+2) Column names were obtained from the file "UCI HAR Dataset/features.txt".
+
+3) The list of names were pared such that they only contained mean and std data. In addition, parentheses were removed and the text "BodyBody" was converted to "Body".
+
+4) For both training and testing data, corresponding activity and subject data were loaded and bound to the aggregated data by columns.
+
+5) The training and testing data were then merged.
+
+6) Subject and activity data were converted to columns, which were also labeled.
+
+7) Data were tidied by melting by subject and activity, then dcasting (using the reshape2 package) on both subject and activity with respect to the melted variable. These data were aggregated for each unique subject and activity pair using the mean function.
+
+Factors
+
+subject: Subject ID number
+activity: Activity being performed during data collection
+Activities
+
+WALKING: subject was walking
+WALKING_UPSTAIRS: subject was walking up a staircase
+`WALKING_DOWNSTAIRS: subject was walking down a staircase
+SITTING: subject was sitting
+STANDING: subject was standing
+LAYING): subject was laying down
+Parameters measured
+
+Only Mean and Std values were retained from the input data. These values were aggregated by finding the averaging measurements for each unique pair of subjects and activities. The leading "t" indicates time domain data. The leading "f" indicates frequency domain data.
+
+tBodyAccMeanX, tBodyAccMeanY, tBodyAccMeanZ, tBodyAccStdX, tBodyAccStdY, tBodyAccStdZ, tGravityAccMeanX, tGravityAccMeanY, tGravityAccMeanZ, tGravityAccStdX, tGravityAccStdY, tGravityAccStdZ, tBodyAccJerkMeanX, tBodyAccJerkMeanY, tBodyAccJerkMeanZ, tBodyAccJerkStdX, tBodyAccJerkStdY, tBodyAccJerkStdZ, tBodyGyroMeanX, tBodyGyroMeanY, tBodyGyroMeanZ, tBodyGyroStdX, tBodyGyroStdY, tBodyGyroStdZ, tBodyGyroJerkMeanX, tBodyGyroJerkMeanY, tBodyGyroJerkMeanZ, tBodyGyroJerkStdX, tBodyGyroJerkStdY, tBodyGyroJerkStdZ, tBodyAccMagMean, tBodyAccMagStd, tGravityAccMagMean, tGravityAccMagStd, tBodyAccJerkMagMean, tBodyAccJerkMagStd, tBodyGyroMagMean, tBodyGyroMagStd, tBodyGyroJerkMagMean, tBodyGyroJerkMagStd, fBodyAccMeanX, fBodyAccMeanY, fBodyAccMeanZ, fBodyAccStdX, fBodyAccStdY, fBodyAccStdZ, fBodyAccMeanFreqX, fBodyAccMeanFreqY, fBodyAccMeanFreqZ, fBodyAccJerkMeanX, fBodyAccJerkMeanY, fBodyAccJerkMeanZ, fBodyAccJerkStdX, fBodyAccJerkStdY, fBodyAccJerkStdZ, fBodyAccJerkMeanFreqX, fBodyAccJerkMeanFreqY, fBodyAccJerkMeanFreqZ, fBodyGyroMeanX, fBodyGyroMeanY, fBodyGyroMeanZ, fBodyGyroStdX, fBodyGyroStdY, fBodyGyroStdZ, fBodyGyroMeanFreqX, fBodyGyroMeanFreqY, fBodyGyroMeanFreqZ, fBodyAccMagMean, fBodyAccMagStd, fBodyAccMagMeanFreq, fBodyBodyAccJerkMagMean, fBodyBodyAccJerkMagStd, fBodyBodyAccJerkMagMeanFreq, fBodyBodyGyroMagMean, fBodyBodyGyroMagStd, fBodyBodyGyroMagMeanFreq, fBodyBodyGyroJerkMagMean, fBodyBodyGyroJerkMagStd, fBodyBodyGyroJerkMagMeanFreq
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help
