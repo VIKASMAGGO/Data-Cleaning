@@ -13,6 +13,8 @@
 ##  Changed some code lines 
 ##  Vikas Maggo  9th July 2017
 ## testing secondary branch 
+##  Added tertiary branch -- to test 
+##  TERTIARY
 
 # Clean up workspace
 rm(list=ls())
@@ -92,3 +94,4 @@ tidyData    = merge(tidyData,activityType,by='activityId',all.x=TRUE);
 setwd("C:/Users/ervik/Desktop/R Programming/data/UCI HAR Dataset")
 write.table(tidyData, './tidyData.txt',row.name=FALSE,sep="\t")
 
+## End of the program
